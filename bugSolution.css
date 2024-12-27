@@ -1,0 +1,20 @@
+The solution is to avoid mixing percentage and fixed units within the `calc()` function.  Instead, use a consistent unit system.  If you need to calculate a width relative to its container and subtract a fixed amount, consider using only pixels or ems:
+
+```css
+/* Solution 1: Using only percentages */
+.element {
+  width: 45%; /* Approximate 50% - 10px */
+}
+
+/* Solution 2: Using only pixels */
+.element {
+  width: calc(50% - 10px); /*May need adjustment based on container width*/ 
+}
+
+/*Solution 3: Using ems - better for responsiveness*/
+.element {
+  width: calc(50vw - 1em);
+}
+```
+
+By using a consistent unit system, the calculation will be more accurate and reliable across different browsers.
